@@ -60,7 +60,6 @@ def self.table_name
   end
 
 def self.find_by(x)
-    
     sql = "SELECT * FROM #{self.table_name} WHERE #{x.keys.first} = '#{x.values.first}'"
     DB[:conn].execute(sql)
   end
