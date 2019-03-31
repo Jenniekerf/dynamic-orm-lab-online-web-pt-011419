@@ -59,9 +59,9 @@ def self.table_name
   DB[:conn].execute(sql) 
   end
 
-def self.find_by(attribute_hash)
+def self.find_by(x)
     
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_hash.keys.first} = #{formatted_value}"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{x.keys.first} = '#{x.values.first}'"
     DB[:conn].execute(sql)
   end
 end
